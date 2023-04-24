@@ -8,11 +8,14 @@
         <link rel='stylesheet' href='style.css'/>
         <script src="script.js"></script>
     </head>
-    <h2 id="mainquestion">Question: ______________</h2>
-    <button id="a">Choice 1</button>
-    <button id="b">Choice 2</button>
-    <button id="c">Choice 3</button>
-    <button id="d">Choice 4</button>
-    <body>
+<h1 id="welcome">
+Welcome to Edward Friedman's's Quiz on Coding! 
+</h1>
+    <body onload="setquestion(0)">
+    <h2 id="mainquestion"></h2>
+    <button onclick="choicebuttonclick(this)" id="a">Choice 1</button>
+    <button onclick="choicebuttonclick(this)" id="b">Choice 2</button>
+    <button onclick="choicebuttonclick(this)" id="c">Choice 3</button>
+    <button onclick="choicebuttonclick(this)" id="d">Choice 4</button>
     </body>
 </html>
