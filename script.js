@@ -2,6 +2,8 @@ let currentquestion = 0
 
 let timervalue = 120
 
+let score = 0 
+
 
 //structure that stores question, question text, and choice, and which choice is correct X 
 //finish questions (about 9)
@@ -81,27 +83,38 @@ function choicebuttonclick (element){
         decrementtimer(10) 
         setcorrectincorrect(false)
     }
-   
-    currentquestion +=1;
-    setquestion (currentquestion);
+    if (currentquestion==questions.length-1){
+        savescore("EF");
+    }
+    else{
+        currentquestion +=1;
+        setquestion (currentquestion);
+    }
 }
 
 function setcorrectincorrect (iscorrect){
     let cucelement = document.getElementById("correctincorrect");
     if (iscorrect){
         cucelement.textContent="CORRECT!";
+        score+=1;
     } 
     else{
         cucelement.textContent="WRONG!";
     }
 }
 
-//timing elements
 function decrementtimer (time){
     timervalue = timervalue - time; 
     let timerelement = document.getElementById("timer");
     timerelement.textContent=timervalue;
 } 
 
+function savescore (initials){
+    let scores=localStorage.getItem("scores");
+    if (scores==null){
+        scores={};
+    }
+    scores[initials]=score
+    localStorage.setItem("scores",scores)
+}
 
-//high score elements
