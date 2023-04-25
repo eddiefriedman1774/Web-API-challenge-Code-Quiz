@@ -75,14 +75,25 @@ function setquestion (number){
 //everytime a button - choice button is CLICKED
 function choicebuttonclick (element){
     if(element.id==questions[currentquestion].correctanswer){
-        console.log("correct");
+        setcorrectincorrect(true)
     }
-    else{
-        console.log("incorrect");
+    else{   
+        decrementtimer(10) 
+        setcorrectincorrect(false)
     }
+   
     currentquestion +=1;
     setquestion (currentquestion);
+}
 
+function setcorrectincorrect (iscorrect){
+    let cucelement = document.getElementById("correctincorrect");
+    if (iscorrect){
+        cucelement.textContent="CORRECT!";
+    } 
+    else{
+        cucelement.textContent="WRONG!";
+    }
 }
 
 //timing elements
@@ -90,7 +101,6 @@ function decrementtimer (time){
     timervalue = timervalue - time; 
     let timerelement = document.getElementById("timer");
     timerelement.textContent=timervalue;
-    console.log(timervalue)
 } 
 
 
