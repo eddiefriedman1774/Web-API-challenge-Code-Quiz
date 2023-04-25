@@ -1,5 +1,10 @@
 let currentquestion = 0
+
+let timervalue = 120
+
+
 //structure that stores question, question text, and choice, and which choice is correct X 
+//finish questions (about 9)
 let questions = [
     {
         prompt: "What are people who write computer code called?",
@@ -44,9 +49,13 @@ let questions = [
         choiceD: "n/a",
         correctanswer: "b",
     },
-    //copy and paste: number 3 
+
 ]
-//do this ten times more with questions!!!!
+
+function documentload (){
+    setInterval(function(){decrementtimer(1)},1000);
+    setquestion(0);
+}
 
 //read and populate DOM 
 function setquestion (number){
@@ -77,6 +86,12 @@ function choicebuttonclick (element){
 }
 
 //timing elements
+function decrementtimer (time){
+    timervalue = timervalue - time; 
+    let timerelement = document.getElementById("timer");
+    timerelement.textContent=timervalue;
+    console.log(timervalue)
+} 
 
 
 //high score elements
