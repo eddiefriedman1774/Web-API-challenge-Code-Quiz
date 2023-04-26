@@ -55,7 +55,6 @@ let questions = [
 ]
 
 function documentload (){
-    setInterval(function(){decrementtimer(1)},1000);
     setquestion(0);
 }
 
@@ -84,11 +83,12 @@ function choicebuttonclick (element){
         setcorrectincorrect(false)
     }
     if (currentquestion==questions.length-1){
-        savescore("EF");
+       gameover()
     }
     else{
         currentquestion +=1;
         setquestion (currentquestion);
+
     }
 }
 
@@ -107,6 +107,9 @@ function decrementtimer (time){
     timervalue = timervalue - time; 
     let timerelement = document.getElementById("timer");
     timerelement.textContent=timervalue;
+    if (timervalue==0){
+        gameover()
+    }
 } 
 
 function savescore (initials){
@@ -131,5 +134,9 @@ function loadscores(){
 function startquiz(){
     document.getElementById("startmenu").style.visibility="hidden"
     document.getElementById("quiz").style.visibility="visible"
-
+    decrementtimer(0)
+    setInterval(function(){decrementtimer(1)},1000);
+}
+function gameover(){
+    document.getElementById("scoreform").style.visibility="visible"
 }

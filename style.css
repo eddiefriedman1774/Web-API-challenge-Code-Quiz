@@ -56,3 +56,7 @@ body {
     border-style:inset;
 
 }
+
+#scoreform{
+    visibility:hidden;
+}
