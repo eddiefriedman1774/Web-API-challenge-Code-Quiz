@@ -12,15 +12,21 @@
 Welcome to Edward Friedman's's Quiz on Coding! 
 </h1>
     <body onload="documentload()">
-    <h2 id="mainquestion"></h2>
-    <button onclick="choicebuttonclick(this)" id="a">Choice 1</button>
-    <button onclick="choicebuttonclick(this)" id="b">Choice 2</button>
-    <button onclick="choicebuttonclick(this)" id="c">Choice 3</button>
-    <button onclick="choicebuttonclick(this)" id="d">Choice 4</button>
-    <p id="correctincorrect">
-    <p id="timer"></p>
-    <p id="highscore"> </p>
-
+    <div id="startmenu">
+        <button onclick="startquiz()">
+        start
+        </button>
+    </div>
+        <div id="quiz">
+         <h2 id="mainquestion"></h2>
+        <button onclick="choicebuttonclick(this)" id="a">Choice 1</button>
+        <button onclick="choicebuttonclick(this)" id="b">Choice 2</button>
+        <button onclick="choicebuttonclick(this)" id="c">Choice 3</button>
+        <button onclick="choicebuttonclick(this)" id="d">Choice 4</button>
+        <p id="correctincorrect">
+        <p id="timer"></p>
+        <p id="highscore"> </p>
+    </div>
 </body>
 
 </html>

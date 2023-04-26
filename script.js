@@ -110,11 +110,26 @@ function decrementtimer (time){
 } 
 
 function savescore (initials){
-    let scores=localStorage.getItem("scores");
-    if (scores==null){
-        scores={};
-    }
-    scores[initials]=score
-    localStorage.setItem("scores",scores)
+    localStorage.setItem(initials,score);       
 }
 
+function loadscores(){
+    let scores = {}
+    for(let i=0;i<localStorage.length;i++){
+        let initials= localStorage.key(i)
+        let score = localStorage.getItem(initials)
+        scores[initials]= parseFloat(score)
+    }
+    const sortedscores = Object.entries(scores)
+  .sort((a, b) => a[1] - b[1])
+  .map(entry => [entry[1], entry[0]]);
+  //https://www.geeksforgeeks.org/different-ways-of-sorting-dictionary-by-values-and-reverse-sorting-by-values/
+  //used this for object storing the initials , sorts 'high score' 
+  console.log(sortedscores)
+}
+
+function startquiz(){
+    document.getElementById("startmenu").style.visibility="hidden"
+    document.getElementById("quiz").style.visibility="visible"
+
+}
