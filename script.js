@@ -44,15 +44,56 @@ let questions = [
     },
 
     {
-        prompt: "n/a",
-        choiceA: "n/a",
-        choiceB: "n/a",
-        choiceC: "n/a",
-        choiceD: "n/a",
+        prompt: "How many languages exist for coding?",
+        choiceA: "200",
+        choiceB: "700",
+        choiceC: "800",
+        choiceD: "900",
         correctanswer: "b",
     },
 
+    {
+        prompt: "What was the original name of Java?",
+        choiceA: "Pinetree",
+        choiceB: "SQL",
+        choiceC: "Oak",
+        choiceD: "Round",
+        correctanswer: "c",
+    },
+    {
+        prompt: "What did Alan Turning do?",
+        choiceA: "a hacker",
+        choiceB: "computer scientist",
+        choiceC: "bugger",
+        choiceD: "debugger",
+        correctanswer: "b",
+    },
+    {
+        prompt: "What was the first bug?",
+        choiceA: "a hacker broke a website",
+        choiceB: "computer scientist found a dead moth inside a computer",
+        choiceC: "government website crashed due to bug",
+        choiceD: "a cockroach ate a wire, causing a bug",
+        correctanswer: "b",
+    },
+    {
+        prompt: "What are white hat hackers",
+        choiceA: "people who code against hackers",
+        choiceB: "hackers who maliciously code to crash websites",
+        choiceC: "government DEA agents who research computer science",
+        choiceD: "government FBI agents who hack against coders",
+        correctanswer: "a",
+    },
+    {
+        prompt: "What is an example of a first programming language",
+        choiceA: "COBOL ",
+        choiceB: "RSD",
+        choiceC: "DUNE",
+        choiceD: "FLOW",
+        correctanswer: "a",
+    },
 ]
+
 
 function documentload (){
     setquestion(0);

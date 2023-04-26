@@ -1,16 +1,19 @@
 body {
     text-align: center;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(to right, #ffffff, #f0f0f1, #e2e2e4, #d3d4d7, #c5c6ca, #bcc3cd, #b1c0d0, #a2bed1, #8bc7de, #6cd1e5, #46dbe3, #1ce4d7);
+}
 
+#button {
+    font-size:50px;
 }
 
 #welcome{
-    background-color: #f1f1f1;
+    background-image: linear-gradient(to right top, #349766, #008470, #006f71, #0e5a67, #264654, #264253, #273e52, #2a3950, #2e4066, #39467c, #4c4a90, #654ba1);
     text-align: center;
     margin-top:20px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-style:inset;
-    color:rgb(3, 3, 3);
+    color:rgb(255, 255, 255);
 }
 #quiz{
     visibility: hidden;
@@ -19,12 +22,15 @@ body {
 #mainquestion {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 25px;
-    letter-spacing: 5px;
+    padding-top:150px;
 
 }
 #timer{
-    font-size:20px;
+    font-size:50px;
+    text-align:center;
+    padding-top: 100px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 
