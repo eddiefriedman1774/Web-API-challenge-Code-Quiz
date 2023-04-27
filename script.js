@@ -4,9 +4,11 @@ let timervalue = 120
 
 let score = 0 
 
+let timerinterval
+
 
 //structure that stores question, question text, and choice, and which choice is correct X 
-//finish questions (about 9)
+
 let questions = [
     {
         prompt: "What are people who write computer code called?",
@@ -150,6 +152,7 @@ function decrementtimer (time){
     timerelement.textContent=timervalue;
     if (timervalue==0){
         gameover()
+        clearInterval(timerinterval)
     }
 } 
 
@@ -157,27 +160,32 @@ function savescore (initials){
     localStorage.setItem(initials,score);       
 }
 
-function loadscores(){
-    let scores = {}
-    for(let i=0;i<localStorage.length;i++){
-        let initials= localStorage.key(i)
-        let score = localStorage.getItem(initials)
-        scores[initials]= parseFloat(score)
-    }
-    const sortedscores = Object.entries(scores)
-  .sort((a, b) => a[1] - b[1])
-  .map(entry => [entry[1], entry[0]]);
-  //https://www.geeksforgeeks.org/different-ways-of-sorting-dictionary-by-values-and-reverse-sorting-by-values/
-  //used this for object storing the initials , sorts 'high score' 
-  console.log(sortedscores)
-}
-
 function startquiz(){
     document.getElementById("startmenu").style.visibility="hidden"
     document.getElementById("quiz").style.visibility="visible"
     decrementtimer(0)
-    setInterval(function(){decrementtimer(1)},1000);
+    timerinterval=setInterval(function(){decrementtimer(1)},1000);
 }
 function gameover(){
     document.getElementById("scoreform").style.visibility="visible"
 }
+
+function loadscores(){
+   let initials= document.getElementById("initials").value
+    if(!"scores" in localStorage){
+        localstoarge.setItem("scores","")
+    }
+    let scores=localStorage.getItem("scores")
+    scores+=(initials+": "+score+",")
+    localStorage.setItem("scores",scores)
+    let scoresarray= scores.split(",")
+    scoresarray.pop()
+    document.getElementById("highscore").textContent=scoresarray.join("\n")
+}
+
+
+sortedscores = Object.entries(scores)
+.sort((a, b) => a[1] - b[1])
+.map(entry => [entry[1], entry[0]]);
+//https://www.geeksforgeeks.org/different-ways-of-sorting-dictionary-by-values-and-reverse-sorting-by-values/
+//used this for object storing the initials , sorts 'high score' 
